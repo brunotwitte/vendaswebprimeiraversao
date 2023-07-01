@@ -1,0 +1,39 @@
+<h3>Endereços</h3>
+<hr>
+<div class="card">
+  <div class="card-header text-right">
+    <a class="btn btn-secondary" role="button" [routerLink]="['/usuario/enderecos/novo']">Novo endereço</a>
+  </div>
+  <div class="card-body">
+    <table class="table grid">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">CEP</th>
+          <th scope="col">Logradouro</th>
+          <th scope="col">Número</th>
+          <th scope="col">Complemento</th>
+          <th scope="col">Bairro</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let endereco of enderecos | async"  >
+          <th scope="row">{{endereco.key}}</th>
+          <td>{{ endereco.cep }}</td>
+          <td>{{ endereco.logradouro }}</td>
+          <td>{{ endereco.numero }}</td>
+          <td>{{ endereco.complemento }}</td>
+          <td>{{ endereco.bairro }}</td>
+          <td class="edit">
+            <a class="btn btn-light" role="button" [routerLink]="['/usuario/enderecos/editar', endereco.key]"><i class="far fa-edit"></i></a>
+          </td>
+          <td class="delete">
+            <button class="btn btn-danger" (click)="remover(endereco.key)"><i class="far fa-trash-alt"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

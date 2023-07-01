@@ -1,0 +1,14 @@
+$theme-colors: (
+  "primary": #1D3557,
+  "secondary": #457B9D,
+  "danger": #E63946,
+  "light": #F1FAEE,
+  "dark": #0F0F0F,
+  "success": #00a65a,
+  "warning": #f39c12
+);
+
+
+@import 'assets/scss/table-grid';
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import '../node_modules/ngx-toastr/toastr-bs4-alert.scss';
